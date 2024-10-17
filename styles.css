@@ -1,0 +1,228 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+    background-color: #f0f4f8;
+    color: #1a1a1a;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff0058, #9f00ff);
+    color: #fff;
+    padding: 3em 2em;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 100px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+    transform: translateY(-5px);
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    background-color: #4a90e2;
+    color: #fff;
+    text-align: left;
+    padding: 5em 2em;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Main Sections */
+main {
+    display: grid;
+    grid-template-areas:
+        "welcome"
+        "benefits"
+        "offer";
+    gap: 3em;
+    padding: 3em;
+}
+
+.welcome {
+    grid-area: welcome;
+    background-color: #fff;
+    padding: 2em;
+    transform: skewY(-3deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    z-index: 1;
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    transform: skewY(3deg);
+}
+
+.welcome p {
+    transform: skewY(3deg);
+    color: #555;
+}
+
+/* Benefits Section */
+.benefits {
+    grid-area: benefits;
+    background-color: #ffeb3b;
+    color: #1a1a1a;
+    padding: 3em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-item {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-30px) rotate(2deg);
+    text-align: center;
+}
+
+.benefit-item h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5em;
+}
+
+/* Offer Section */
+.offer {
+    grid-area: offer;
+    background-color: #ff0058;
+    color: #fff;
+    padding: 4em;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+}
+
+.offer-item {
+    position: relative;
+    z-index: 2;
+}
+
+.offer-image img {
+    position: absolute;
+    bottom: -50px;
+    right: -20px;
+    max-width: 300px;
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Tablet Layout */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "welcome"
+            "benefits"
+            "offer";
+    }
+
+    .benefit-item {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    header {
+        padding: 5em 3em;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "welcome benefits"
+            "offer offer";
+        gap: 4em;
+    }
+
+    .welcome {
+        padding: 4em;
+    }
+
+    .offer {
+        padding: 5em;
+    }
+
+    .offer-image img {
+        max-width: 400px;
+    }
+}
+
